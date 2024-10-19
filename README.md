@@ -20,3 +20,8 @@ The MERN Bookstore App is a full-stack web application built using the MERN stac
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
 - **Authentication:** JSON Web Tokens (JWT)
+
+Updates for:
+Banner Page: Created a visually appealing banner for the bookstore.
+Recommended Page: Displaying books recommended based on user preferences and popularity.
+Top Seller Page: Implemented a section showcasing the top-selling books.
