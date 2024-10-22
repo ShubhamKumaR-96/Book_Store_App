@@ -18,7 +18,7 @@ const Navbar = () => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   console.log(isDropDownOpen);
 
-  const currentUser = true;
+  const currentUser = false;
 
   return (
     <header className="max-w-screen-2xl mx-auto px-12 py-6 ">
