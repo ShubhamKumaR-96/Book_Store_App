@@ -4,7 +4,7 @@ import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-    const[message,srtMessage]=useState("")
+    const[message,setMessage]=useState("")
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
 

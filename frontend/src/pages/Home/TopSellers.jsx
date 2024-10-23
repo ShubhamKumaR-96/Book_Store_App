@@ -33,8 +33,6 @@ const TopSellers = () => {
           (book) => book.category === selectedCategory.toLowerCase()
         );
 
-
-
   return (
     <div className="py-10">
       <h1 className="text-3xl font-semibold mb-6">Top Sellers</h1>
@@ -75,7 +73,7 @@ const TopSellers = () => {
             spaceBetween: 50,
           },
         }}
-        modules={[Pagination,Navigation]}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
         {filteredBooks.length > 0 &&

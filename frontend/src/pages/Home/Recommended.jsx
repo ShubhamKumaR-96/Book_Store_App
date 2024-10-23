@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 
@@ -6,21 +6,20 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import BookCard from '../books/BookCard';
-
+import BookCard from "../books/BookCard";
 
 const Recommended = () => {
-    const [books, setBooks] = useState([]);
-    useEffect(() => {
-        fetch("blog.json")
-          .then((res) => res.json())
-          .then((data) => setBooks(data));
-      }, []);
-    
+  const [books, setBooks] = useState([]);
+  useEffect(() => {
+    fetch("blog.json")
+      .then((res) => res.json())
+      .then((data) => setBooks(data));
+  }, []);
+
   return (
     <div>
-         <h1 className="text-3xl font-semibold mb-6">Recommended for you</h1>
-       <Swiper
+      <h1 className="text-3xl font-semibold mb-6">Recommended for you</h1>
+      <Swiper
         slidesPerView={1}
         spaceBetween={30}
         navigation={true}
@@ -42,7 +41,7 @@ const Recommended = () => {
             spaceBetween: 50,
           },
         }}
-        modules={[Pagination,Navigation]}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
         {books.length > 0 &&
@@ -53,7 +52,7 @@ const Recommended = () => {
           ))}
       </Swiper>
     </div>
-  )
-}
+  );
+};
 
-export default Recommended
+export default Recommended;

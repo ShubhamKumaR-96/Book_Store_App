@@ -2,8 +2,16 @@ import React from 'react'
 import { FiShoppingCart } from 'react-icons/fi'
 import { getImgUrl } from '../../utils/getImgUrl'
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/features/cart/cartSlice';
 
 const BookCard = ({book}) => {
+
+    const dispatch=useDispatch();
+
+    const handleAddToCart=(product)=>{
+        dispatch(addToCart(product))
+    }
    
 
     return (

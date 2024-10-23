@@ -6,6 +6,7 @@ import { HiShoppingCart } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import avatarImg from "../assets/avatar.png";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const navigation = [
   { name: "Dashboard", href: "/dashbaord" },
@@ -16,7 +17,9 @@ const navigation = [
 
 const Navbar = () => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-  console.log(isDropDownOpen);
+
+  const cartItems = useSelector((state) => state.cart.cartItem.length);
+  
 
   const currentUser = false;
 
@@ -57,8 +60,16 @@ const Navbar = () => {
                   <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-40">
                     <ul className="py-2">
                       {navigation.map((item) => (
-                        <li key={item.name} onClick={()=>setIsDropDownOpen(false)}>
-                          <Link to={item.href} className="block px-4 py-2 text-sm hover:bg-gray-100">{item.name}</Link>
+                        <li
+                          key={item.name}
+                          onClick={() => setIsDropDownOpen(false)}
+                        >
+                          <Link
+                            to={item.href}
+                            className="block px-4 py-2 text-sm hover:bg-gray-100"
+                          >
+                            {item.name}
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -80,7 +91,11 @@ const Navbar = () => {
             className="bg-primary p-1 sm:px-6 px-2 flex items-center rounded-sm"
           >
             <HiShoppingCart />
-            <span className="text-sm font-semibold sm:ml-1">0</span>
+            {cartItems > 0 ? (
+              <span className="text-sm font-semibold sm:ml-1">{cartItems}</span>
+            ) : (
+              <span className="text-sm font-semibold sm:ml-1">0</span>
+            )}
           </Link>
         </div>
       </nav>
