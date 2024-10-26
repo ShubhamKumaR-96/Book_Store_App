@@ -4,7 +4,8 @@ const { postBook, getAllBooks, getSingleBook, updateBook, deleteBook } = require
 const router = express.Router();
 
 
-// Flow => frontend => backend server => controller => book schema => database => send data to server => back to the frontend
+// Flow => frontend => backend server => controller => book schema => database => 
+// send data to server => back to the frontend 
 
 // post a book
 router.post("/create-book",postBook)

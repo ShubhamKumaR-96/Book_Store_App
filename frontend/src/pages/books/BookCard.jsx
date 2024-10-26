@@ -15,7 +15,7 @@ const BookCard = ({book}) => {
    
 
     return (
-        <div className=" rounded-lg transition-shadow duration-300">
+        <div className="rounded-lg transition-shadow duration-300">
             <div
                 className="flex flex-col sm:flex-row sm:items-center sm:h-72  sm:justify-center gap-4"
             >
@@ -31,17 +31,17 @@ const BookCard = ({book}) => {
 
                 <div>
                     <Link to={`/books/${book._id}`}>
-                        <h3 className="text-xl font-semibold hover:text-blue-600 mb-3">
+                        <h3 className="text-xl font-semibold hover:text-blue-600 mb-3 px-1 ">
                        {book?.title}
                         </h3>
                     </Link>
                     <p className="text-gray-600 mb-5">{book?.description.length > 80 ? `${book.description.slice(0, 80)}...` : book?.description}</p>
-                    <p className="font-medium mb-5">
-                        ${book?.newPrice} <span className="line-through font-normal ml-2">$ {book?.oldPrice}</span>
+                    <p className="font-medium">
+                        ${book?.newPrice} <span className="line-through font-normal ml-3">$ {book?.oldPrice}</span>
                     </p>
                     <button 
                     onClick={() => handleAddToCart(book)}
-                    className="px-12 py-2 rounded-md text-base font-secondary font-bold bg-yellow-500 hover:bg-secondary hover:text-white transition-all duration-200 cursor-pointerpx-6 space-x-1 flex items-center gap-1 ">
+                    className="px-6 py-2 mt-2 rounded-md text-base font-secondary font-bold bg-yellow-500 hover:bg-secondary hover:text-white transition-all duration-200 cursor-pointer space-x-1 flex items-center gap-1 ">
                         <FiShoppingCart className="" />
                         <span>Add to Cart</span>
                     </button>

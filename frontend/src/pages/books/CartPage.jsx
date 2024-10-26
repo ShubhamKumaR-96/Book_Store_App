@@ -12,7 +12,7 @@ const CartPage = () => {
   const cartItems = useSelector((state) => state.cart.cartItem);
 
   const totalPrice = cartItems
-    .reduce((acc, item) => acc + item.newPrice, 0)
+    .reduce((acc, item) => acc + item?.newPrice, 0)
     .toFixed(2);
 
   const handleClearCart = (item) => {
