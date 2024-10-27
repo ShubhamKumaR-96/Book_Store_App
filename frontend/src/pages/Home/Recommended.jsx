@@ -12,11 +12,6 @@ import { useFetchAllBooksQuery } from "../../redux/features/bookApi";
 const Recommended = () => {
   // const [books, setBooks] = useState([]);
   const {data:books=[]}=useFetchAllBooksQuery();
-  useEffect(() => {
-    fetch("blog.json")
-      .then((res) => res.json())
-      .then((data) => setBooks(data));
-  }, []);
 
   return (
     <div>
