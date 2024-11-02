@@ -16,10 +16,16 @@ const orderApi=createApi({
             body:newOrder,
             credentials:'include'
            })
+        }),
+        getOrderByEmail:(builder.query)({
+            query:(email)=>({
+                url:`/email/${email}`
+            }),
+            providesTags:['Orders']
         })
     })
 })
 
-export const {useCreateOrderMutation}=orderApi;
+export const {useCreateOrderMutation , useGetOrderByEmailQuery}=orderApi;
 
 export default orderApi
